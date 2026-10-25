@@ -5,6 +5,8 @@ kind: "package-bundle"
 
 # dsh-extra-workspaces
 
+**English** | [简体中文](./README.zh.md)
+
 **Extra workspaces** for DSH: writable directories added to `workspace-write`
 mode — for confined commands **and** for the `write` / `edit` tools, from one
 list — plus first-run toolchain detection, so Go / Rust / uv / Python / npm /
@@ -125,7 +127,8 @@ English and Chinese ship together:
 - The host never returns prose: failures carry a stable `error` code
   (`path-not-absolute`, `settings-conflict`, …) that the dictionary translates, so
   the API contract is language-neutral.
-- `README.md` / `README.zh.md` — mirrored documentation.
+- [`README.md`](./README.md) / [`README.zh.md`](./README.zh.md) — mirrored
+  documentation, cross-linked at the top of each.
 
 `test/locale.test.mjs` enforces key parity between the two dictionaries, non-empty
 copy, and that every host error code, tool and kind has text in both languages.

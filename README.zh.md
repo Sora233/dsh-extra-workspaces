@@ -5,6 +5,8 @@ kind: "package-bundle"
 
 # dsh-extra-workspaces（额外工作区）
 
+[English](./README.md) | **简体中文**
+
 给 DSH 的 **「工作区内修改」（workspace-write）** 模式追加可写工作区：命令与
 `write` / `edit` 文件工具共用同一份列表；首次启动自动检测工具链，把 Go、Rust、
 uv、Python、npm、pnpm 的缓存与安装目录加进来，解决"包管理写在工作区之外"的问题。
@@ -173,7 +175,7 @@ DSH **没有**默认的通用设置页渲染器：`dsh-settings` 提供了配置
   页面通过 `ctx.locale.register(NS, { zh, en })` 注册；
 - host 不返回任何句子，失败只返回稳定错误码（`path-not-absolute`、`settings-conflict` …），
   文案由字典翻译，API 契约与语言无关；
-- `README.md` / `README.zh.md` 双向对应。
+- [`README.md`](./README.md) / [`README.zh.md`](./README.zh.md) 双向对应，各自标题下互链。
 
 `test/locale.test.mjs` 保证两份字典键完全一致、无空文案，且每个错误码/工具/分类在两种语言下都有文案。
 
