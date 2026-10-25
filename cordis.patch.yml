@@ -1,0 +1,36 @@
+# The bundle layer of dsh-extra-workspaces.
+#
+# A profile that selects this bundle (dsh.profile.bundles, after
+# @deepseek-ai/dsh-base) gets the widened providers automatically:
+#   - the stock `ctx.sandbox` and `ctx.fs` rows are disabled by id, and
+#   - this package's rows are inserted in their place.
+#
+# The workspace row needs no entry: the sandbox policy always grants the
+# session workspace, so it can never be removed from the list.
+#
+# Configure through the settings page (Settings → Extra workspaces) or by
+# editing <DSH home>/extra-workspaces.json. The rows below hold no path
+# list: the service owns it, so changes apply to the next command.
+
+- id: sandbox
+  disabled: true
+
+- id: fs-sandbox
+  disabled: true
+
+- insert:
+    # The workspaces service: detection, persistence, first-run seeding.
+    - id: extra-workspaces
+      name: 'dsh-extra-workspaces/workspaces'
+
+    # Its HTTP surface for the settings page (skipped in compositions
+    # without ctx.webServer, e.g. headless or TUI).
+    - id: extra-workspaces-api
+      name: 'dsh-extra-workspaces/http'
+
+    # The two providers that consume the list.
+    - id: sandbox-extra-workspaces
+      name: 'dsh-extra-workspaces'
+
+    - id: fs-extra-workspaces
+      name: 'dsh-extra-workspaces/fs'

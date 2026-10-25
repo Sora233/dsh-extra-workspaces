@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Extra workspaces",
+    "description": "Extra writable directories under workspace-write, at three scopes — global, per workspace, or per conversation — with toolchain detection (Go, Rust, uv, Python, npm, pnpm) and a conversation-header dialog."
+  }
+}

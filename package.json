@@ -1,0 +1,112 @@
+{
+  "name": "dsh-extra-workspaces",
+  "version": "0.3.0",
+  "description": "Adds extra workspaces (writable directories) to DSH's workspace-write sandbox mode at three scopes — global, per workspace, and per conversation — with toolchain detection, a settings card, and a conversation-header dialog. Preferences live in the plugin's own settings section.",
+  "icon": "icon.svg",
+  "author": "sora233 <sora@sora233.me>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sora233/dsh-extra-workspaces.git"
+  },
+  "homepage": "https://github.com/sora233/dsh-extra-workspaces",
+  "bugs": {
+    "url": "https://github.com/sora233/dsh-extra-workspaces/issues"
+  },
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-client",
+    "deepseek-harness",
+    "sandbox",
+    "workspace-write",
+    "workspaces"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.2 <0.3.0"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./workspaces": "./workspaces.js",
+    "./fs": "./fs.js",
+    "./http": "./http.js",
+    "./engine": "./engine.js",
+    "./client-locale": "./client-locale.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "index.js",
+    "client.js",
+    "workspaces.js",
+    "fs.js",
+    "http.js",
+    "api.js",
+    "engine.js",
+    "settings-repo.js",
+    "rows.js",
+    "detect.js",
+    "tools.js",
+    "errors.js",
+    "volatile.js",
+    "compat.js",
+    "client-locale.js",
+    "locale/*.json",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "prepublishOnly": "npm test"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.2": "compatible",
+        "0.2.1-rc.3": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5",
+    "@deepseek-ai/dsh-fs": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-fs-sandbox": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-sandbox": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-sandbox-local": "^0.2.1-rc.2",
+    "@deepseek-ai/node-addon-system": "^0.1.2",
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5",
+    "@deepseek-ai/dsh-fs": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-fs-sandbox": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-sandbox": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-sandbox-local": "^0.2.1-rc.2",
+    "@deepseek-ai/node-addon-system": "^0.1.2",
+    "@deepseek-ai/schemastery": "^3.18.5"
+  }
+}

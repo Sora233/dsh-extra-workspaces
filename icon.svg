@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Extra workspaces">
+  <!-- An original mark for this plugin: a folder that gained one more writable root. -->
+  <path fill="#2F6FEB" d="M5 13.5A4.5 4.5 0 0 1 9.5 9h7.9c1.2 0 2.35.48 3.19 1.32l1.62 1.62c.84.84 1.99 1.31 3.18 1.31h13.11A4.5 4.5 0 0 1 43 17.75v17.75A4.5 4.5 0 0 1 38.5 40h-29A4.5 4.5 0 0 1 5 35.5z"/>
+  <path fill="#1F4FB8" d="M5 20.5h38v3.2H5z" opacity=".35"/>
+  <circle cx="34.5" cy="33.5" r="9.5" fill="#0FA36B" stroke="#ffffff" stroke-width="2.5"/>
+  <g fill="#ffffff">
+    <rect x="33.25" y="28" width="2.5" height="11" rx="1"/>
+    <rect x="29" y="32.25" width="11" height="2.5" rx="1"/>
+  </g>
+</svg>
